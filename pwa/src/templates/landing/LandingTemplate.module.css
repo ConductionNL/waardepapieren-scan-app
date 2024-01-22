@@ -6,8 +6,8 @@
   margin-block-end: var(--utrecht-space-block-2xl);
 }
 
-@media only screen and (max-width: 992px) {
-  /* Laptop */
+@media only screen and (min-width: 992px) {
+  /* Desktop */
   .container {
     margin-block-start: var(--utrecht-space-block-3xl);
   }

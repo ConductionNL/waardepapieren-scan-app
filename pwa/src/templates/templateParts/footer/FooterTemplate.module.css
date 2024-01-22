@@ -19,17 +19,14 @@
 }
 
 .footer {
-  display: flex;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-size: var(--utrecht-page-footer-background-size);
-  background-position: var(--utrecht-page-footer-background-position);
-  min-height: var(--utrecht-page-footer-min-height);
+  background-position: var(
+    --utrecht-page-footer-mobile-background-position,
+    var(--utrecht-page-footer-background-position)
+  );
 }
 
 .imageContainer {
-  height: var(--utrecht-page-footer-logo-max-height);
-  width: var(--utrecht-page-footer-logo-max-width);
+  margin-block-end: 15px;
 }
 
 .image {
@@ -99,7 +96,7 @@
 .contentGrid {
   gap: 28px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .dynamicSectionTitle {
@@ -114,10 +111,7 @@
 }
 
 .logoAndConduction {
-  margin-top: 38px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
 }
 
 .iconLeft {
@@ -130,31 +124,38 @@
   color: var(--utrecht-page-footer-icon-color, inherit);
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 576px) {
   /* Tablet */
   .contentGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media only screen and (max-width: 576px) {
-  /* Mobile */
+@media only screen and (min-width: 992px) {
+  /* Desktop */
+
   .footer {
-    background-position: var(
-      --utrecht-page-footer-mobile-background-position,
-      var(--utrecht-page-footer-background-position)
-    );
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: var(--utrecht-page-footer-background-size);
+    background-position: var(--utrecht-page-footer-background-position);
+    min-height: var(--utrecht-page-footer-min-height);
   }
 
   .contentGrid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .imageContainer {
-    margin-block-end: 15px;
+    height: var(--utrecht-page-footer-logo-max-height);
+    width: var(--utrecht-page-footer-logo-max-width);
   }
 
   .logoAndConduction {
-    display: block;
+    margin-top: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

@@ -43,8 +43,14 @@ type TDynamicContentItem = {
 };
 
 export const FooterTemplate: React.FC = () => {
+  const [footerContent, setFooterContent] = React.useState<TDynamicContentItem[]>([]);
   const _useFooterContent = useFooterContent();
   const getFooterContent = _useFooterContent.getContent();
+
+  // For Production
+  React.useEffect(() => {
+    setFooterContent(getFooterContent.data);
+  }, [getFooterContent]);
 
   // For development
   // React.useEffect(() => {
@@ -56,9 +62,7 @@ export const FooterTemplate: React.FC = () => {
     <PageFooter className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.contentGrid}>
-          {getFooterContent.data?.map((content: any, idx: string) => (
-            <DynamicSection key={idx} {...{ content }} />
-          ))}
+          {footerContent?.map((content, idx) => <DynamicSection key={idx} {...{ content }} />)}
         </div>
 
         <div className={styles.logoAndConduction}>
