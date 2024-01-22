@@ -1,9 +1,8 @@
 import * as React from "react";
 import * as styles from "./HeaderTemplate.module.css";
 import clsx from "clsx";
-import { PageHeader, SkipLink } from "@utrecht/component-library-react/dist/css-module";
+import { PageHeader } from "@utrecht/component-library-react/dist/css-module";
 import { useTranslation } from "react-i18next";
-import { useGatsbyContext } from "../../../context/gatsby";
 import { navigate } from "gatsby";
 import { Logo } from "@conduction/components";
 
@@ -12,20 +11,11 @@ interface HeaderTemplateProps {
 }
 
 export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName }) => {
-  const { t, i18n } = useTranslation();
-  const { gatsbyContext } = useGatsbyContext();
+  const { i18n } = useTranslation();
 
   return (
     <PageHeader className={clsx(layoutClassName && layoutClassName)}>
       <div className={styles.container}>
-        <div className={styles.skipLinkContainer}>
-          <SkipLink href="#filters" tabIndex={gatsbyContext.location.pathname === "/" ? 0 : -1}>
-            {t("Skip to filters")}
-          </SkipLink>
-          <SkipLink href="#mainContent" tabIndex={0}>
-            {t("Skip to main content")}
-          </SkipLink>
-        </div>
         <div className={styles.navContainer}>
           <Logo onClick={() => navigate("/")} />
 

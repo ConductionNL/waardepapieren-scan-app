@@ -10,11 +10,9 @@ env: # Change these to your preferences any image url can also be a base encoded
   API_BASE_URL: "https://api.gateway.commonground.nu/api"
   NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
   DEV_ENVIRONMENT: "true"
-  SHOW_CATEGORY: "true"
   SHOW_ORGANIZATION: "true"
   FAVICON_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-favicon-32x32.png"
   HEADER_LOGO_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"
-  ORGANISATION_NAME: "Conduction"
   JUMBOTRON_IMAGE_URL: "https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"
   FOOTER_LOGO_URL: "true"
   FOOTER_LOGO_HREF: "https://conduction.nl/"
@@ -48,11 +46,9 @@ jobs:
           envkey_GATSBY_API_BASE_URL: ${{ env.API_BASE_URL }}
           envkey_GATSBY_NL_DESIGN_THEME_CLASSNAME: ${{ env.NL_DESIGN_THEME_CLASSNAME }}
           envkey_GATSBY_DEV_ENVIRONMENT: ${{ env.DEV_ENVIRONMENT }}
-          envkey_GATSBY_SHOW_CATEGORY: ${{ env.SHOW_CATEGORY }}
           envkey_GATSBY_SHOW_ORGANIZATION: ${{ env.SHOW_ORGANIZATION }}
           envkey_GATSBY_FAVICON_URL: ${{ env.FAVICON_URL }}
           envkey_GATSBY_HEADER_LOGO_URL: ${{ env.HEADER_LOGO_URL }}
-          envkey_GATSBY_ORGANISATION_NAME: ${{ env.ORGANISATION_NAME }}
           envkey_GATSBY_JUMBOTRON_IMAGE_URL: ${{ env.JUMBOTRON_IMAGE_URL }}
           envkey_GATSBY_FOOTER_LOGO_URL: ${{ env.FOOTER_LOGO_URL }}
           envkey_GATSBY_FOOTER_LOGO_HREF: ${{ env.FOOTER_LOGO_HREF }}

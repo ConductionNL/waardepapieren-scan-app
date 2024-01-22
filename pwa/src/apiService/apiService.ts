@@ -4,10 +4,8 @@ import { removeFileNameFromUrl } from "../services/FileNameFromUrl";
 import { DEFAULT_FOOTER_CONTENT_URL } from "../templates/templateParts/footer/FooterTemplate";
 
 // Resources
-import OpenWoo from "./resources/openWoo";
 import FooterContent from "./resources/footerContent";
 import Markdown from "./resources/markdown";
-import AvailableFilters from "./resources/availableFilters";
 
 interface PromiseMessage {
   loading?: string;
@@ -56,14 +54,6 @@ export default class APIService {
         Accept: "application/vnd.github.html",
       },
     });
-  }
-
-  public get OpenWoo(): OpenWoo {
-    return new OpenWoo(this.BaseClient, this.Send);
-  }
-
-  public get AvailableFilters(): AvailableFilters {
-    return new AvailableFilters(this.AvailableFiltersClient, this.Send);
   }
 
   public get FooterContent(): FooterContent {
