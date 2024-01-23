@@ -19,10 +19,6 @@ export const LandingTemplate: React.FC = () => {
                 const qrData: any = result;
                 navigate(`/${qrData.text}`);
               }
-
-              if (!!error) {
-                console.error(error);
-              }
             }}
             constraints={{ facingMode: "environment" }}
           />

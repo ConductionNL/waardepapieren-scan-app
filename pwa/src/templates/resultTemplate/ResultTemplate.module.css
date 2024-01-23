@@ -13,6 +13,14 @@
   flex-direction: column;
 }
 
+.cardContainer:hover {
+  cursor: default;
+}
+
+.cardContainer:hover .cardHeader {
+  border-bottom-color: var(--conduction-card-header-hover-border-bottom-color);
+}
+
 .success {
   --conduction-card-wrapper-background-color: var(
     --utrecht-alert-ok-background-color
@@ -35,30 +43,6 @@
   );
 }
 
-.descriptionFail {
-  color: var(--utrecht-alert-error-color) !important;
-}
-
-.descriptionSuccess {
-  color: var(--utrecht-alert-ok-color) !important;
-}
-
-.code {
-  color: #e2386d;
-  background-color: #f6f6f6;
-  padding: 5px;
-  border: 2px solid #dedede;
-  border-radius: 5px;
-}
-
-.cardContainer:hover {
-  cursor: default;
-}
-
-.cardContainer:hover .cardHeader {
-  border-bottom-color: var(--conduction-card-header-hover-border-bottom-color);
-}
-
 .titleSuccess,
 .titleFail {
   white-space: nowrap;
@@ -74,6 +58,22 @@
 
 .icon {
   margin-inline-end: 10px;
+}
+
+.descriptionSuccess {
+  color: var(--utrecht-alert-ok-color) !important;
+}
+
+.descriptionFail {
+  color: var(--utrecht-alert-error-color) !important;
+}
+
+.code {
+  color: #e2386d;
+  background-color: #f6f6f6;
+  padding: 5px;
+  border: 2px solid #dedede;
+  border-radius: 5px;
 }
 
 @media only screen and (min-width: 992px) {
