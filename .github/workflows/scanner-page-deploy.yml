@@ -13,15 +13,15 @@ env: # Change these to your preferences any image url can also be a base encoded
   FAVICON_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-favicon-32x32.png"
   FOOTER_LOGO_URL: "true"
   FOOTER_LOGO_HREF: "https://conduction.nl/"
-  FOOTER_CONTENT: "https://raw.githubusercontent.com/ConductionNL/${{github.event.repository.name}}/main/FooterContent.json"
-  FOOTER_CONTENT_HEADER: "heading-2"
+  FOOTER_CONTENT: "https://raw.githubusercontent.com/ConductionNL/woo-website-template/main/pwa/src/templates/templateParts/footer/FooterContent.json"
+  FOOTER_CONTENT_HEADER: "heading-3"
   # OIDN_NUMBER: " "
   ENV_VARS_SET: "true"
 
 on:
   push:
     branches:
-      - main
+      - development
 
 jobs:
   build:
