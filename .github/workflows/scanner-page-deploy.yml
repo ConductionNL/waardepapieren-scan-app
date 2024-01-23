@@ -61,10 +61,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: cd pwa && npm install
+        run: cd pwa && npm install --legacy-peer-deps
 
       - name: Install parcel/watcher
-        run: cd pwa && npm install @parcel/watcher
+        run: cd pwa && npm install @parcel/watcher --legacy-peer-deps
 
       - name: Remove old Gatsby cache
         run: rm -rf pwa/.cache
