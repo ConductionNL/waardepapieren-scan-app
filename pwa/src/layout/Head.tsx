@@ -2,18 +2,12 @@ import * as React from "react";
 import _ from "lodash";
 import "../styling/index.css";
 import { Helmet } from "react-helmet";
-import { useGatsbyContext } from "../context/gatsby";
 import { useTranslation } from "react-i18next";
 import { languageOptions } from "../data/languageOptions";
 
 export const Head: React.FC = () => {
-  const { gatsbyContext } = useGatsbyContext();
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
-  const translatedCrumbs = gatsbyContext.pageContext?.breadcrumb.crumbs.map((crumb: any) => ({
-    ...crumb,
-    crumbLabel: t(_.upperFirst(crumb.crumbLabel)),
-  }));
 
   const currentLanguage = languageOptions.find(
     (language) => language.label === (i18n.language.toUpperCase() === "EN" ? "US" : i18n.language.toUpperCase()),
