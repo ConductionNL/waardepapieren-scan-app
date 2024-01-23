@@ -18,10 +18,10 @@ jobs:
         run: rm -rf pwa/node_modules && rm -rf pwa/.cache && rm -rf pwa/public
 
       - name: Parcel/watcher
-        run: npm i @parcel/watcher
+        run: npm i @parcel/watcher --legacy-peer-deps
 
       - name: Install dependencies
-        run: cd pwa && npm i
+        run: cd pwa && npm i --legacy-peer-deps
 
       - name: Build
         run: cd pwa && npm run build
