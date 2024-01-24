@@ -35,7 +35,7 @@ export const ResultTemplate: React.FC<ResultTemplateProps> = ({ id }) => {
       setToken(publicKey);
     }
     if (!token) {
-      getToken();
+      getToken().catch((err) => (setResult(false), setData(err.message)));
     }
   });
 
