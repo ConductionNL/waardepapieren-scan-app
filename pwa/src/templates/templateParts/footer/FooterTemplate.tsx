@@ -137,7 +137,7 @@ const WithLoveByConduction: React.FC = () => {
     <div>
       <Link
         className={styles.withLoveLink}
-        href="https://github.com/ConductionNL/woo-website-template"
+        href="https://github.com/ConductionNL/waardepapieren-scan-app"
         target="_blank"
         aria-label={`${t("Link to github repository")}, ${t("Opens a new window")}`}
       >
@@ -148,7 +148,7 @@ const WithLoveByConduction: React.FC = () => {
       with{" "}
       <Link
         className={styles.withLoveLink}
-        href="https://github.com/ConductionNL/woo-website-template/graphs/contributors"
+        href="https://github.com/ConductionNL/waardepapieren-scan-app/graphs/contributors"
         target="_blank"
         aria-label={`${t("Link to github contributors page")}, ${t("Opens a new window")}`}
       >

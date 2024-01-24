@@ -1,7 +1,7 @@
 publiccodeYmlVersion: '0.1'
 name: scan-app
 applicationSuite: null
-url: https://github.com/ConductionNL/woo-website-template
+url: https://github.com/ConductionNL/waardepapieren-scan-app
 landingURL: null
 isBasedOn: null
 softwareVersion: null
@@ -19,8 +19,8 @@ description:
   en:
     localisedName: null
     genericName: null
-    shortDescription: "Template for setting up a Woo page using NL Design tokens."
-    longDescription: "Template for setting up a Woo page using NL Design tokens."
+    shortDescription: "Waardepapieren scan app to scan QR codes."
+    longDescription: "Waardepapieren scan app to scan QR codes."
     documentation: null
     apiDocumentation: null
     features: []
@@ -30,8 +30,8 @@ description:
   nl:
     localisedName: null
     genericName: null
-    shortDescription: "Template voor het opzetten van een Woo pagina aan de hand van NL Design tokens."
-    longDescription: "Template voor het opzetten van een Woo pagina aan de hand van NL Design tokens."
+    shortDescription: "Waardepapieren scan app om QR codes te scannen."
+    longDescription: "Waardepapieren scan app om QR codes te scannen."
     documentation: null
     apiDocumentation: null
     features: []
@@ -84,4 +84,4 @@ nl:
     model: null
   upl: []
 downloadUrls:
-  - https://github.com/ConductionNL/woo-website-template/archive/refs/heads/main.zip
+  - https://github.com/ConductionNL/waardepapieren-scan-app/archive/refs/heads/main.zip
