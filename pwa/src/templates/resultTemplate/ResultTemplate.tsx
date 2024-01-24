@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { TableResultsTemplate } from "../tableResultTemplate/TableResultsTemplate";
+import Skeleton from "react-loading-skeleton";
 
 interface ResultTemplateProps {
   id: string;
@@ -54,30 +55,33 @@ export const ResultTemplate: React.FC<ResultTemplateProps> = ({ id }) => {
   return (
     <Page>
       <PageContent className={styles.container}>
-        <CardWrapper className={clsx(styles.cardContainer, result ? styles.success : styles.fail)}>
-          <CardHeader className={styles.cardHeader}>
-            <CardHeaderTitle className={clsx(result ? styles.titleSuccess : styles.titleFail)}>
-              <Heading1>
-                <FontAwesomeIcon className={styles.icon} icon={result ? faCircleCheck : faCircleXmark} />
-                {result ? "Success!" : "Fail!"}
-              </Heading1>
-            </CardHeaderTitle>
-          </CardHeader>
+        {data && (
+          <CardWrapper className={clsx(styles.cardContainer, result ? styles.success : styles.fail)}>
+            <CardHeader className={styles.cardHeader}>
+              <CardHeaderTitle className={clsx(result ? styles.titleSuccess : styles.titleFail)}>
+                <Heading1>
+                  <FontAwesomeIcon className={styles.icon} icon={result ? faCircleCheck : faCircleXmark} />
+                  {result ? "Success!" : "Fail!"}
+                </Heading1>
+              </CardHeaderTitle>
+            </CardHeader>
 
-          {result && (
-            <>
-              <Paragraph className={styles.descriptionSuccess}>{t("The JWT validation was successful")}:</Paragraph>
-              <TableResultsTemplate {...{ data }} />
-            </>
-          )}
-          {!result && (
-            <Paragraph className={styles.descriptionFail}>
-              {t("The JWT validation failed with error message")}:
-              <br />
-              <Code>{data}</Code>
-            </Paragraph>
-          )}
-        </CardWrapper>
+            {result && (
+              <>
+                <Paragraph className={styles.descriptionSuccess}>{t("The JWT validation was successful")}:</Paragraph>
+                <TableResultsTemplate {...{ data }} />
+              </>
+            )}
+            {!result && (
+              <Paragraph className={styles.descriptionFail}>
+                {t("The JWT validation failed with error message")}:
+                <br />
+                <Code>{data}</Code>
+              </Paragraph>
+            )}
+          </CardWrapper>
+        )}
+        {!data && <Skeleton height="200px" />}
       </PageContent>
     </Page>
   );
