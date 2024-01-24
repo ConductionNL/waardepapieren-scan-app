@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-[id]-index-tsx-7b6e7e78a4ab70c89fde.js","mappings":"8JAEA,UAAeA,EAAU,O","sources":["webpack://product-website-template/./src/pages/[id]/index.tsx"],"sourcesContent":["import ResultPage from \"./resultPage\";\r\n\r\nexport default ResultPage;\r\n"],"names":["ResultPage"],"sourceRoot":""}
