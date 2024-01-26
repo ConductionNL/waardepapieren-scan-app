@@ -17,8 +17,8 @@
   cursor: default;
 }
 
-.cardContainer:hover .cardHeader {
-  border-bottom-color: var(--conduction-card-header-hover-border-bottom-color);
+.cardHeader:hover {
+  border-bottom-color: var(--conduction-card-header-border-bottom-color);
 }
 
 .success {
@@ -26,7 +26,7 @@
     --utrecht-alert-ok-background-color
   );
 }
-.succes:hover {
+.success:hover {
   --conduction-card-wrapper-hover-background-color: var(
     --utrecht-alert-ok-background-color
   );

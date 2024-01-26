@@ -1,6 +1,7 @@
 .table {
   background-color: var(--utrecht-table-background-color);
   border-collapse: var(--utrecht-table-border-collapse) !important;
+  --utrecht-table-font-size: 12px;
 }
 
 .tableBody {
@@ -59,4 +60,11 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 992px) {
+  /* Desktop */
+  .table {
+    --utrecht-table-font-size: var(--utrecht-document-font-size);
+  }
 }

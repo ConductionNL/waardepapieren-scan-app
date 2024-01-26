@@ -3,8 +3,8 @@ import * as styles from "./ResultTemplate.module.css";
 import * as jose from "jose";
 import clsx from "clsx";
 import { Page, PageContent } from "@utrecht/component-library-react/dist/css-module";
-import { Code, CodeBlock, Heading1, Heading3, Paragraph } from "@utrecht/component-library-react";
-import { CardHeader, CardHeaderTitle, CardWrapper, HorizontalOverflowWrapper } from "@conduction/components";
+import { Code, Heading1, Paragraph } from "@utrecht/component-library-react";
+import { CardHeader, CardHeaderTitle, CardWrapper } from "@conduction/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
@@ -19,21 +19,42 @@ export const ResultTemplate: React.FC<ResultTemplateProps> = ({ id }) => {
   const { t } = useTranslation();
   const [token, setToken] = React.useState<any>("");
   const [data, setData] = React.useState<any>("");
-  const [result, setResult] = React.useState<boolean>(false);
+  const [result, setResult] = React.useState<boolean>();
+  const [keyFormat, setKeyFormat] = React.useState<"x509" | "spki">("x509");
+  const [algorithm, setAlgorithm] = React.useState<"RS512" | "ES256">("RS512");
 
-  const alg = "RS512";
-  const x509 = `-----BEGIN CERTIFICATE-----
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-  Officiis optio corporis dolorem quae molestias! At pariatur quaerat natus quod voluptatum dignissimos. 
-  Deserunt officia dolorum, aspernatur magnam consequatur ullam labore fugiat.
-  -----END CERTIFICATE-----`; //Set publickey/certificate
+  const key = window.sessionStorage.getItem("PUBLIC_KEY") ?? "";
+
+  const getKeyFormat = () => {
+    if (!key) return;
+    if (key.includes("-----BEGIN CERTIFICATE-----")) {
+      setKeyFormat("x509");
+      setAlgorithm("RS512");
+    }
+    if (key.includes("-----BEGIN PUBLIC KEY-----")) {
+      setKeyFormat("spki");
+      setAlgorithm("ES256");
+    }
+  };
+
+  React.useEffect(() => {
+    getKeyFormat();
+  }, []);
 
   React.useEffect(() => {
     async function getToken() {
-      const publicKey = await jose.importX509(x509, alg);
-
-      setToken(publicKey);
+      switch (keyFormat) {
+        case "x509":
+          const x509Key = await jose.importX509(key, algorithm);
+          setToken(x509Key);
+          break;
+        case "spki":
+          const spkiKey = await jose.importSPKI(key, algorithm);
+          setToken(spkiKey);
+          break;
+      }
     }
+
     if (!token) {
       getToken().catch((err) => (setResult(false), setData(err.message)));
     }
