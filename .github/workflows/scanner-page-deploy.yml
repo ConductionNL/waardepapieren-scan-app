@@ -9,6 +9,7 @@ env: # Change these to your preferences any image url can also be a base encoded
   GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
   API_BASE_URL: "https://api.gateway.commonground.nu/api"
   NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
+  PUBLIC_KEY: "-----BEGIN CERTIFICATE----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis optio corporis dolorem quae molestias! At pariatur quaerat natus quod voluptatum dignissimos. Deserunt officia dolorum, aspernatur magnam consequatur ullam labore fugiat. -----END CERTIFICATE-----"
   DEV_ENVIRONMENT: "true"
   FAVICON_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-favicon-32x32.png"
   FOOTER_LOGO_URL: "true"
@@ -42,6 +43,7 @@ jobs:
           envkey_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX: ${{ env.USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX }}
           envkey_GATSBY_API_BASE_URL: ${{ env.API_BASE_URL }}
           envkey_GATSBY_NL_DESIGN_THEME_CLASSNAME: ${{ env.NL_DESIGN_THEME_CLASSNAME }}
+          envkey_GATSBY_PUBLIC_KEY: ${{ env.PUBLIC_KEY }}
           envkey_GATSBY_DEV_ENVIRONMENT: ${{ env.DEV_ENVIRONMENT }}
           envkey_GATSBY_FAVICON_URL: ${{ env.FAVICON_URL }}
           envkey_GATSBY_FOOTER_LOGO_URL: ${{ env.FOOTER_LOGO_URL }}
