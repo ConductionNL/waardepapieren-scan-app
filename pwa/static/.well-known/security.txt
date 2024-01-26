@@ -1,7 +1,3 @@
----
-layout: none
-permalink: .well-known/security.txt
----
 # Information related to reporting security vulnerabilities of this site.
 
 # How to communicate about security issues.
