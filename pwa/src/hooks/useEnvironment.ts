@@ -36,6 +36,7 @@ export const useEnvironment = () => {
     window.sessionStorage.setItem("FOOTER_CONTENT", process.env.GATSBY_FOOTER_CONTENT ?? "");
     window.sessionStorage.setItem("FOOTER_CONTENT_HEADER", process.env.GATSBY_FOOTER_CONTENT_HEADER ?? "");
     window.sessionStorage.setItem("OIDN_NUMBER", process.env.GATSBY_OIDN_NUMBER ?? "");
+    window.sessionStorage.setItem("PUBLIC_KEY", process.env.GATSBY_PUBLIC_KEY ?? "");
 
     updateSessionStorage();
   };
@@ -58,6 +59,7 @@ export const useEnvironment = () => {
     window.sessionStorage.setItem("FOOTER_CONTENT", config.GATSBY_FOOTER_CONTENT ?? "");
     window.sessionStorage.setItem("FOOTER_CONTENT_HEADER", config.GATSBY_FOOTER_CONTENT_HEADER ?? "");
     window.sessionStorage.setItem("OIDN_NUMBER", config.GATSBY_OIDN_NUMBER ?? "");
+    window.sessionStorage.setItem("PUBLIC_KEY", config.GATSBY_PUBLIC_KEY ?? "");
 
     updateSessionStorage();
   };

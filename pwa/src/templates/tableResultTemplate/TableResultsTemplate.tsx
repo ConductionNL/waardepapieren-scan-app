@@ -24,7 +24,7 @@ export const TableResultsTemplate: React.FC<TableResultsTemplateProps> = ({ data
       <Table className={styles.table}>
         <TableBody className={styles.tableBody}>
           {Object.keys(data).map((keyName: any, i) => (
-            <>
+            <React.Fragment key={i}>
               {keyName !== "credentialSubject" && (
                 <TableRow
                   className={styles.tableRow}
@@ -61,7 +61,7 @@ export const TableResultsTemplate: React.FC<TableResultsTemplateProps> = ({ data
                   ))}
                 </>
               )}
-            </>
+            </React.Fragment>
           ))}
         </TableBody>
       </Table>

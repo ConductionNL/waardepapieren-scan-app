@@ -7,5 +7,6 @@
   "GATSBY_FOOTER_LOGO_HREF": "https://www.conduction.nl/",
   "GATSBY_FOOTER_CONTENT": "https://raw.githubusercontent.com/ConductionNL/woo-website-template/main/pwa/src/templates/templateParts/footer/FooterContent.json",
   "GATSBY_FOOTER_CONTENT_HEADER": "",
-  "GATSBY_OIDN_NUMBER": ""
+  "GATSBY_OIDN_NUMBER": "",
+  "GATSBY_PUBLIC_KEY": "-----BEGIN CERTIFICATE----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis optio corporis dolorem quae molestias! At pariatur quaerat natus quod voluptatum dignissimos. Deserunt officia dolorum, aspernatur magnam consequatur ullam labore fugiat. -----END CERTIFICATE-----"
 }
